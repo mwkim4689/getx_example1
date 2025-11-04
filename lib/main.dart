@@ -16,8 +16,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getx_example1/example/changeNameEx.dart';
-import 'package:getx_example1/example/counterEx.dart';
-import 'package:getx_example1/example/todolistEx.dart';
+import 'package:getx_example1/example/counter.dart';
+import 'package:getx_example1/example/todolist.dart';
 import 'package:getx_example1/example/mvvm_example/mvvm_main_page.dart';
 
 void main() {
