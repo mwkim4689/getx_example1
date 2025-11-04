@@ -18,6 +18,8 @@ import 'package:get/get.dart';
 import 'profile/profile_page.dart';
 
 class MvvmMainPage extends StatelessWidget {
+  const MvvmMainPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
