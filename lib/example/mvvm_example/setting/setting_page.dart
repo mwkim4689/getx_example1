@@ -8,11 +8,11 @@ import 'package:get/get.dart';
 import 'setting_vm.dart';
 
 class SettingPage extends StatelessWidget {
-  // Controller 등록
-  final SettingVM settingVM = Get.put(SettingVM());
 
   @override
   Widget build(BuildContext context) {
+    // Controller 등록
+    final SettingVM settingVM = Get.put(SettingVM());
     return Scaffold(
       appBar: AppBar(title: Text('설정 (MVVM 예제)'), centerTitle: true),
       body: Padding(

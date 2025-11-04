@@ -15,18 +15,20 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:getx_example1/example/changeNameEx.dart';
+import 'package:getx_example1/example/change_name.dart';
 import 'package:getx_example1/example/counter.dart';
 import 'package:getx_example1/example/todolist.dart';
 import 'package:getx_example1/example/mvvm_example/mvvm_main_page.dart';
 
 void main() {
   // GetMaterialApp: GetX 기능을 사용하기 위해 MaterialApp 대신 사용
-  runApp(GetMaterialApp(home: HomeScreen()));
+  runApp(GetMaterialApp(home: HomePage()));
 }
 
 // 홈 화면
-class HomeScreen extends StatelessWidget {
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

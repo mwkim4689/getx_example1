@@ -9,9 +9,7 @@ import 'package:get/get.dart';
 import 'profile_vm.dart';
 import '../setting/setting_page.dart';
 
-class ProfilePage extends StatelessWidget {
-  // Controller 등록
-  final ProfileVM profileVM = Get.put(ProfileVM());
+class ProfilePage extends GetView<ProfileVM> {
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +31,7 @@ class ProfilePage extends StatelessWidget {
                   ),
                   SizedBox(height: 10),
                   Text(
-                    profileVM.state.value.name,
+                    controller.state.value.name,
                     style: TextStyle(
                       fontSize: 32,
                       fontWeight: FontWeight.bold,
@@ -49,7 +47,7 @@ class ProfilePage extends StatelessWidget {
                   ),
                   SizedBox(height: 10),
                   Text(
-                    '${profileVM.state.value.age}세',
+                    '${controller.state.value.age}세',
                     style: TextStyle(
                       fontSize: 32,
                       fontWeight: FontWeight.bold,
@@ -72,17 +70,17 @@ class ProfilePage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 ElevatedButton(
-                  onPressed: () => profileVM.updateName('김철수'),
+                  onPressed: () => controller.updateName('김철수'),
                   child: Text('김철수'),
                 ),
                 SizedBox(width: 10),
                 ElevatedButton(
-                  onPressed: () => profileVM.updateName('이영희'),
+                  onPressed: () => controller.updateName('이영희'),
                   child: Text('이영희'),
                 ),
                 SizedBox(width: 10),
                 ElevatedButton(
-                  onPressed: () => profileVM.updateName('박민수'),
+                  onPressed: () => controller.updateName('박민수'),
                   child: Text('박민수'),
                 ),
               ],
@@ -100,14 +98,14 @@ class ProfilePage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 ElevatedButton.icon(
-                  onPressed: profileVM.decreaseAge,
+                  onPressed: controller.decreaseAge,
                   icon: Icon(Icons.remove),
                   label: Text('-1'),
                   style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
                 ),
                 SizedBox(width: 20),
                 ElevatedButton.icon(
-                  onPressed: profileVM.increaseAge,
+                  onPressed: controller.increaseAge,
                   icon: Icon(Icons.add),
                   label: Text('+1'),
                   style: ElevatedButton.styleFrom(

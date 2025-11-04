@@ -8,7 +8,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_state_manager/src/simple/get_controllers.dart';
 
 class CounterController extends GetxController {
   // .obs: 변수를 관찰 가능한(observable) 상태로 만듦
@@ -22,12 +21,12 @@ class CounterController extends GetxController {
 }
 
 class CounterPage extends StatelessWidget {
-  // Get.put(): 컨트롤러를 GetX에 등록
-  // 이후 Get.find()로 어디서든 이 컨트롤러에 접근 가능
-  final CounterController counterController = Get.put(CounterController());
-
   @override
   Widget build(BuildContext context) {
+    // Get.put(): 컨트롤러를 GetX에 등록
+    // 이후 Get.find()로 어디서든 이 컨트롤러에 접근 가능
+    final CounterController counterController = Get.put(CounterController());
+
     return Scaffold(
       appBar: AppBar(title: Text('예제 1: 카운터')),
       body: Center(
@@ -56,20 +55,4 @@ class CounterPage extends StatelessWidget {
       ),
     );
   }
-}
-
-
-
-class SomePage extends StatelessWidget {
-  const SomePage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-
-    final controller = Get.put(CounterController());
-    return Obx(() => Text('${controller.count}'));
-
-    
-  }
-  
 }

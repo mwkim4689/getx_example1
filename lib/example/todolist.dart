@@ -6,10 +6,10 @@
 // - 리스트에 항목 추가/삭제하기
 // - .refresh()가 필요한 경우 이해하기
 
-// Todo 모델
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+// Todo 모델
 class Todo {
   String title;
   bool isCompleted;
@@ -53,11 +53,11 @@ class TodoController extends GetxController {
 }
 
 class TodolistPage extends StatelessWidget {
-  final TodoController todoController = Get.put(TodoController());
   final TextEditingController textController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
+    final TodoController todoController = Get.put(TodoController());
     return Scaffold(
       appBar: AppBar(title: Text('예제 3: Todo 리스트')),
       body: Padding(
@@ -113,6 +113,9 @@ class TodolistPage extends StatelessWidget {
   }
 
   Card listItem(Todo todo, int index) {
+
+    final todoController = Get.find<TodoController>();
+
     return Card(
       child: ListTile(
         leading: IconButton(

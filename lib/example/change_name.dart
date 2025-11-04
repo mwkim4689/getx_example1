@@ -7,7 +7,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_state_manager/src/simple/get_controllers.dart';
 
 class NameController extends GetxController {
   // String도 .obs로 반응형으로 만들 수 있음
@@ -19,8 +18,9 @@ class NameController extends GetxController {
   }
 }
 
-class ChangeNamePage extends StatelessWidget {
-  final NameController nameController = Get.put(NameController());
+class ChangeNamePage extends GetView<NameController> {
+  const ChangeNamePage({super.key});
+
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +37,7 @@ class ChangeNamePage extends StatelessWidget {
 
               Obx(
                 () => Text(
-                  nameController.name.value,
+                  controller.name.value,
                   style: TextStyle(
                     fontSize: 40,
                     fontWeight: FontWeight.bold,
@@ -49,7 +49,7 @@ class ChangeNamePage extends StatelessWidget {
               SizedBox(height: 40),
 
               ElevatedButton(
-                onPressed: () => nameController.changeName('김철수'),
+                onPressed: () => controller.changeName('김철수'),
                 style: ElevatedButton.styleFrom(
                   padding: EdgeInsets.symmetric(horizontal: 40, vertical: 15),
                 ),
@@ -58,7 +58,7 @@ class ChangeNamePage extends StatelessWidget {
               SizedBox(height: 15),
 
               ElevatedButton(
-                onPressed: () => nameController.changeName('이영희'),
+                onPressed: () => controller.changeName('이영희'),
                 style: ElevatedButton.styleFrom(
                   padding: EdgeInsets.symmetric(horizontal: 40, vertical: 15),
                 ),
@@ -67,7 +67,7 @@ class ChangeNamePage extends StatelessWidget {
               SizedBox(height: 15),
 
               ElevatedButton(
-                onPressed: () => nameController.changeName('박민수'),
+                onPressed: () => controller.changeName('박민수'),
                 style: ElevatedButton.styleFrom(
                   padding: EdgeInsets.symmetric(horizontal: 40, vertical: 15),
                 ),
