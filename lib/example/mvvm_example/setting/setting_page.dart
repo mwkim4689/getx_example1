@@ -8,6 +8,8 @@ import 'package:get/get.dart';
 import 'setting_vm.dart';
 
 class SettingPage extends StatelessWidget {
+  const SettingPage({super.key});
+
 
   @override
   Widget build(BuildContext context) {

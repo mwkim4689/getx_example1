@@ -21,6 +21,8 @@ class CounterController extends GetxController {
 }
 
 class CounterPage extends StatelessWidget {
+  const CounterPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     // Get.put(): 컨트롤러를 GetX에 등록

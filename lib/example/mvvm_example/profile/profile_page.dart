@@ -10,6 +10,8 @@ import 'profile_vm.dart';
 import '../setting/setting_page.dart';
 
 class ProfilePage extends GetView<ProfileVM> {
+  const ProfilePage({super.key});
+
 
   @override
   Widget build(BuildContext context) {
