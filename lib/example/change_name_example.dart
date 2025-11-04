@@ -18,12 +18,13 @@ class NameController extends GetxController {
   }
 }
 
-class ChangeNamePage extends GetView<NameController> {
+class ChangeNamePage extends StatelessWidget {
   const ChangeNamePage({super.key});
-
 
   @override
   Widget build(BuildContext context) {
+    final nameController = Get.put(NameController());
+
     return Scaffold(
       appBar: AppBar(title: Text('예제 2: 이름 변경')),
       body: Center(
@@ -37,7 +38,7 @@ class ChangeNamePage extends GetView<NameController> {
 
               Obx(
                 () => Text(
-                  controller.name.value,
+                  nameController.name.value,
                   style: TextStyle(
                     fontSize: 40,
                     fontWeight: FontWeight.bold,
@@ -49,7 +50,7 @@ class ChangeNamePage extends GetView<NameController> {
               SizedBox(height: 40),
 
               ElevatedButton(
-                onPressed: () => controller.changeName('김철수'),
+                onPressed: () => nameController.changeName('김철수'),
                 style: ElevatedButton.styleFrom(
                   padding: EdgeInsets.symmetric(horizontal: 40, vertical: 15),
                 ),
@@ -58,7 +59,7 @@ class ChangeNamePage extends GetView<NameController> {
               SizedBox(height: 15),
 
               ElevatedButton(
-                onPressed: () => controller.changeName('이영희'),
+                onPressed: () => nameController.changeName('이영희'),
                 style: ElevatedButton.styleFrom(
                   padding: EdgeInsets.symmetric(horizontal: 40, vertical: 15),
                 ),
@@ -67,7 +68,7 @@ class ChangeNamePage extends GetView<NameController> {
               SizedBox(height: 15),
 
               ElevatedButton(
-                onPressed: () => controller.changeName('박민수'),
+                onPressed: () => nameController.changeName('박민수'),
                 style: ElevatedButton.styleFrom(
                   padding: EdgeInsets.symmetric(horizontal: 40, vertical: 15),
                 ),

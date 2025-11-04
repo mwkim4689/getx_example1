@@ -9,12 +9,14 @@ import 'package:get/get.dart';
 import 'profile_vm.dart';
 import '../setting/setting_page.dart';
 
-class ProfilePage extends GetView<ProfileVM> {
+class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
-
 
   @override
   Widget build(BuildContext context) {
+
+    final profileVM = Get.find<ProfileVM>();
+
     return Scaffold(
       appBar: AppBar(title: Text('프로필 (MVVM 예제)'), centerTitle: true),
       body: Padding(
@@ -33,7 +35,7 @@ class ProfilePage extends GetView<ProfileVM> {
                   ),
                   SizedBox(height: 10),
                   Text(
-                    controller.state.value.name,
+                    profileVM.state.value.name,
                     style: TextStyle(
                       fontSize: 32,
                       fontWeight: FontWeight.bold,
@@ -49,7 +51,7 @@ class ProfilePage extends GetView<ProfileVM> {
                   ),
                   SizedBox(height: 10),
                   Text(
-                    '${controller.state.value.age}세',
+                    '${profileVM.state.value.age}세',
                     style: TextStyle(
                       fontSize: 32,
                       fontWeight: FontWeight.bold,
@@ -72,17 +74,17 @@ class ProfilePage extends GetView<ProfileVM> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 ElevatedButton(
-                  onPressed: () => controller.updateName('김철수'),
+                  onPressed: () => profileVM.updateName('김철수'),
                   child: Text('김철수'),
                 ),
                 SizedBox(width: 10),
                 ElevatedButton(
-                  onPressed: () => controller.updateName('이영희'),
+                  onPressed: () => profileVM.updateName('이영희'),
                   child: Text('이영희'),
                 ),
                 SizedBox(width: 10),
                 ElevatedButton(
-                  onPressed: () => controller.updateName('박민수'),
+                  onPressed: () => profileVM.updateName('박민수'),
                   child: Text('박민수'),
                 ),
               ],
@@ -100,14 +102,14 @@ class ProfilePage extends GetView<ProfileVM> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 ElevatedButton.icon(
-                  onPressed: controller.decreaseAge,
+                  onPressed: profileVM.decreaseAge,
                   icon: Icon(Icons.remove),
                   label: Text('-1'),
                   style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
                 ),
                 SizedBox(width: 20),
                 ElevatedButton.icon(
-                  onPressed: controller.increaseAge,
+                  onPressed: profileVM.increaseAge,
                   icon: Icon(Icons.add),
                   label: Text('+1'),
                   style: ElevatedButton.styleFrom(
