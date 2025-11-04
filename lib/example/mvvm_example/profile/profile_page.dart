@@ -14,8 +14,7 @@ class ProfilePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-    final profileVM = Get.find<ProfileVM>();
+    final profileVM = Get.put(ProfileVM());
 
     return Scaffold(
       appBar: AppBar(title: Text('프로필 (MVVM 예제)'), centerTitle: true),

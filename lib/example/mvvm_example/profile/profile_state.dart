@@ -6,8 +6,8 @@
 
 class ProfileState {
   // 프로필 데이터
-  String name;
-  int age;
+  final String name;
+  final int age;
 
   ProfileState({
     required this.name,

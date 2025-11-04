@@ -5,7 +5,7 @@
 
 class SettingState {
   // 설정 데이터: 다크모드 on/off
-  bool isDarkMode;
+  final bool isDarkMode;
 
   SettingState({
     required this.isDarkMode,
