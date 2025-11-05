@@ -17,7 +17,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getx_example1/example/change_name_example.dart';
 import 'package:getx_example1/example/counter_example.dart';
-import 'package:getx_example1/example/todolist_example/todolist.dart';
+import 'package:getx_example1/example/todolist_example/todolist_page.dart';
 import 'package:getx_example1/example/mvvm_example/mvvm_main_page.dart';
 
 void main() {
